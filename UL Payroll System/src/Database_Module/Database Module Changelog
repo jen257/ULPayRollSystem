@@ -1,0 +1,23 @@
+# Database Module Changelog
+
+## [Unreleased]
+### Added
+- **Backup and Restore Path Handling**: Introduced the `getBackpath()` method to retrieve the backup directory path.
+- **Backup Data Feature**: Added a `backupData()` method that retrieves the backup path and calls `BackupDataExtends()` to back up data.
+- **Restore Data Feature**: Added a `restoreData()` method that retrieves the backup path and calls `RestoreDataExtends()` to restore data from backup.
+- **CSV File Management**: Added options for users to select CSV files for adding or deleting data through a menu interface.
+
+### Changed
+- **Backup and Restore Method Signature**: 
+  - Updated `BackupDataExtends()` and `RestoreDataExtends()` to accept the backup directory path as a parameter. This allows more flexibility in managing the backup locations.
+  - Methods now directly call the `getBackpath()` function to get the backup path for operations.
+- **UI Updates**: Enhanced the user interface with more prompts and feedback for users to easily navigate through data management options.
+
+### Fixed
+- **Error Handling**: Fixed issues where the backup or restore path was not being properly passed to methods, leading to errors during backup/restore operations.
+
+## [v1.0.0.0] - 2024-11-22
+### Initial Release
+- Introduced core functionality for managing CSV files, including adding and deleting data.
+- Implemented basic backup and restore functionality using predefined backup paths.
+
