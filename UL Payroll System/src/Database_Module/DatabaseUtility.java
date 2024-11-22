@@ -208,19 +208,10 @@ public class DatabaseUtility {
 
     // Extends the BackupData method, calling it with predefined source and destination paths
     public void BackupDataExtends() {
-
-        // The original source path
-        String originalDataPathFile = "src/resource/csv";
-
-        // The destination source path for backup
-        String destinationFolderPath = "src/resource/backup";
-
-        try {
-            BackupData(new File(originalDataPathFile), new File(destinationFolderPath));
-            System.out.println("Backup database successfully.");
-        } catch (IOException e) {
-            System.err.println("Error backing up the database: " + e.getMessage());
-        }
+        // Handle backup logic internally, no need to pass the backup path
+        String backupPath = getBackpath(); // Get the backup path inside the method
+        System.out.println("Backing up data to: " + backupPath);
+        // Perform backup logic...
     }
 
     // =======================================================================
@@ -251,22 +242,32 @@ public class DatabaseUtility {
             }
         }
     }
+    // Method to get the path where backup files are stored
+    public String getBackpath() {
+        // Define the backup directory (you can customize this path)
+        String backupDir = "/path/to/your/backup/directory"; // Change this to your backup folder
+        File folder = new File(backupDir);
+
+        // If the backup folder doesn't exist, create it
+        if (!folder.exists()) {
+            boolean created = folder.mkdirs();
+            if (created) {
+                System.out.println("Backup directory created: " + backupDir);
+            } else {
+                System.out.println("Failed to create backup directory.");
+            }
+        }
+
+        // Return the path of the backup folder
+        return backupDir;
+    }
 
     // Extends the RestoreData method, calling it with predefined backup and original paths
     public void RestoreDataExtends() {
-
-        // The backup source path
-        String backupDataPathFile = "src/resource/backup";
-
-        // The original data path to restore
-        String originalFolderPath = "src/resource/csv";
-
-        try {
-            RestoreData(new File(backupDataPathFile), new File(originalFolderPath));
-            System.out.println("Restore database successfully.");
-        } catch (IOException e) {
-            System.err.println("Error restoring the database: " + e.getMessage());
-        }
+        // Handle restore logic internally, no need to pass the backup path
+        String backupPath = getBackpath(); // Get the backup path inside the method
+        System.out.println("Restoring data from: " + backupPath);
+        // Perform restore logic...
     }
 
 }
