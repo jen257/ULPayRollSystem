@@ -1,10 +1,12 @@
-Version 1.0.0 - Initial Implementation
+#HR Change Log
+
+## Version 1.0.0 - Initial Implementation
 Date: [23/11/2024]
 
-Added
+### Added
 PayrollSystem.java
 
-Designed a PayrollSystem class to manage employees and their payrolls.
+### Designed a PayrollSystem class to manage employees and their payrolls.
 Features:
 Maintains lists for Staff and Payslip objects.
 Allows adding staff with addStaff(Staff staff).
@@ -12,7 +14,7 @@ Generates payslips for all employees using generatePayslips(), calculating net p
 Supports promotion of full-time staff with promoteFullTimeStaff(String id).
 Payslip.java
 
-Introduced a Payslip class to represent payroll information for staff.
+### Introduced a Payslip class to represent payroll information for staff.
 Attributes:
 staffId to associate payslip with an employee.
 date to record the generation date.
@@ -21,7 +23,7 @@ Methods:
 toString() to export payroll details in a readable format.
 Staff.java
 
-Created an abstract Staff class as the base for all employee types.
+### Created an abstract Staff class as the base for all employee types.
 Attributes:
 id, name, role (full-time/part-time), salaryScale, and currentPoint for salary level management.
 Methods:
@@ -31,7 +33,7 @@ Getter methods for retrieving staff attributes.
 displayDetails() to print employee information.
 TaxCalculation.java
 
-Added a utility class to handle tax computations.
+### Added a utility class to handle tax computations.
 Features:
 Supports Irish tax calculations with two bands:
 20% for income up to €40,000.
@@ -39,7 +41,7 @@ Supports Irish tax calculations with two bands:
 Implements calculateTax(double grossPay) to return the applicable tax amount.
 FullTimeStaff.java
 
-Extended the Staff class to represent full-time employees.
+### Extended the Staff class to represent full-time employees.
 Attributes:
 Defined constants for deductions: HEALTH_INSURANCE (€100) and UNION_FEES (€50).
 Features:
@@ -47,7 +49,7 @@ Implemented calculateMonthlyPay() to compute net salary by calculating gross sal
 Uses a private calculateTax() method for determining tax based on gross pay.
 PartTimeStaff.java
 
-Extended the Staff class to represent part-time employees.
+### Extended the Staff class to represent part-time employees.
 Attributes:
 hourlyRate and hoursWork to track hourly wages and hours worked.
 Features:
